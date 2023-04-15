@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server --ignore client",
-    "build": "npm run react-scripts build --output public",
+    "build": "npm install --prefix npm run build --prefix client && rm -rf client/node_modules",
     "start": "node server"
   },
   "keywords": [],
@@ -27,6 +27,7 @@
     "react-router-dom": "^5.3.0"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^7.0.1",
     "nodemon": "^2.0.22"
   }
 }
