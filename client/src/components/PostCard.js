@@ -45,7 +45,8 @@ export function PostCard({ post }) {
           {post.description}
         </p>
       </div>
-      {post.image && <img src={post.image.url} className='w-full  object-cover' />}
+      {post.image && <img src={post.image.url} alt={`Imagen de ${post.title}`} className='w-full  object-cover' />}
+
     </div>
   )
 }

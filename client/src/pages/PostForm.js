@@ -3,7 +3,7 @@ import * as Yup from 'yup'
 import { usePosts } from '../context/postContext'
 import { useNavigate, useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import {AiOutlineLoading3Quarters} from 'react-icons/ai'
+import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 
 export function PostForm() {
   const { createPost, getPost, updatePost } = usePosts()
@@ -23,7 +23,7 @@ export function PostForm() {
         setPost(post)
       }
     })()
-
+    // eslint-disable-next-line
   }, [params.id])
 
   return (
@@ -61,8 +61,8 @@ export function PostForm() {
               <Field component="textarea" name='description' placeholder="description" className='px-3 py-2 focus:online-none bg-gray-600 text-white w-full' rows={3} />
               <ErrorMessage component='p' className='text-red-400 text-sm' name='description' />
               <label htmlFor='description' className='text-sm block font-bold text-gray-400'>Description</label>
-              <input type='file' name='image' className='px-3 py-2 focus:outline-none rounded bg-gray-600 text-white w-full' onChange={(e)=>setFieldValue('image',e.target.files[0])}></input>
-              <button type='submit' className='bg-indigo-600 hover:bgindigo-500 px-4 py-2 rounded mt-2 text-white focus:outline-none disable:bg-indigo-400' disabled={isSubmitting}>{isSubmitting ? (<AiOutlineLoading3Quarters className='animate-spin h-5 w-5'/>) : 'Save'}</button>
+              <input type='file' name='image' className='px-3 py-2 focus:outline-none rounded bg-gray-600 text-white w-full' onChange={(e) => setFieldValue('image', e.target.files[0])}></input>
+              <button type='submit' className='bg-indigo-600 hover:bgindigo-500 px-4 py-2 rounded mt-2 text-white focus:outline-none disable:bg-indigo-400' disabled={isSubmitting}>{isSubmitting ? (<AiOutlineLoading3Quarters className='animate-spin h-5 w-5' />) : 'Save'}</button>
             </Form>
           )}
         </Formik>
