@@ -6,10 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server --ignore client",
-    "prebuild": "cp -r ./client/public ./public",
-    "build": "npm install --prefix client && npm run build --prefix client && rm -rf client/node_modules && mv ./client/build ./public",
+    "build": "npm install --prefix npm run build --prefix client && rm -rf client/node_modules",
     "start": "node server"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,6 +19,7 @@
     "express-fileupload": "^1.4.0",
     "fs-extra": "^11.1.1",
     "http-errors": "^2.0.0",
+    "mongodb": "^5.2.0",
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
     "path-browserify": "^1.0.1",
