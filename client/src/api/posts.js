@@ -1,20 +1,23 @@
 import axios from 'axios'
 
-export const getPostsRequests = async () =>await axios.get('/posts')
+const API_URL = 'https://mern-app-proyect-production.up.railway.app'
+
+export const getPostsRequests = async () => await axios.get(`${API_URL}/posts`)
 
 export const createPostRequest = async (post) => {
     const form = new FormData()
 
-    for (let key in post){
-        form.append(key,post[key])
+    for (let key in post) {
+        form.append(key, post[key])
     }
 
-    return await axios.post('/posts', form, {
+    return await axios.post(`${API_URL}/posts`, form, {
         headers: {
             "Content-Type": "multipart/form-data"
         }
     })
 }
+
 
 export const deletePostRequest = async (id) => await axios.delete('/posts/'+ id)
 
