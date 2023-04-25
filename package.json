@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server --ignore client",
+    "dev": "nodemon index.js --ignore client",
     "build": "npm install --prefix npm run build --prefix client && rm -rf client/node_modules",
-    "start": "node npm start"
+    "start": "npm run dev"
   },
   "keywords": [],
   "author": "",
