@@ -1,0 +1,19 @@
+name: mern
+version: 1
+defaultEnv: nodejs14
+
+environments:
+  production:
+    buildCommand: npm run build
+    startCommand: npm start
+  staging:
+    buildCommand: npm run build
+    startCommand: npm run start:staging
+  development:
+    buildCommand: npm run build
+    startCommand: npm run dev
+
+services:
+  web:
+    port: $PORT
+    memory: 256MB
